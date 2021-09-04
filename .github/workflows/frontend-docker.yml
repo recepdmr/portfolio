@@ -1,0 +1,23 @@
+name: Frontend
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Login to Gitlab
+        uses: docker/login-action@v1
+        with:
+          registry: ${{secrets.GITLAB_REGISTRY_SERVER}}
+          username: ${{ secrets.GITLAB_USERNAME }}
+          password: ${{ secrets.GITLAB_PASSWORD }}
+      - uses: actions/checkout@v2
+      - name: Build Docker image
+        run: docker build . --file ./frontend/Dockerfile --tag registry.gitlab.com/recepdmr/portfolio
+      - uses: actions/checkout@v2
+      - name: Push Docker image
+        run: docker push  registry.gitlab.com/recepdmr/portfolio
