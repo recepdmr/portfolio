@@ -1,0 +1,8 @@
+﻿@page
+@model IndexModel
+@(await Component.InvokeAsync(typeof(Components.PersonelIntro.PersonalIntroViewComponent)))
+@(await Component.InvokeAsync(typeof(Components.Services.ServicesViewComponent)))
+@(await Component.InvokeAsync(typeof(Components.PersonelProjects.PersonalProjectsViewComponent)))
+@(await Component.InvokeAsync(typeof(Components.Skills.SkillsViewComponent)))
+@(await Component.InvokeAsync(typeof(Components.Experience.ExperienceViewComponent)))
+@(await Component.InvokeAsync(typeof(Components.Contact.ContactViewComponent)))

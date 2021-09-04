@@ -1,0 +1,32 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=0">
+    <meta name="description" content="">
+    <meta name="author" content="Paul, Logan Cee">
+
+    <title>Recep Demir - Portfolio</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/site.min.css" asp-append-version="true" />
+</head>
+
+<body class="body-copyright-light">
+    @(await Component.InvokeAsync(typeof(Components.Preloader.PreloaderViewComponent)))
+    <div class="wrapper">
+        @(await Component.InvokeAsync(typeof(Components.Header.HeaderViewComponent)))
+        <div id="content" class="content">
+            <div class="homepage-personal a-pagepiling">
+                @RenderBody()
+            </div>
+        </div>
+        @(await Component.InvokeAsync(typeof(Components.Footer.FooterViewComponent)))
+
+
+    </div>
+    @(await Component.InvokeAsync(typeof(Components.Modal.ModalViewComponent)))
+
+
+    <script src="js/site.min.js" asp-append-version="true"></script>
+</body>
+</html>
