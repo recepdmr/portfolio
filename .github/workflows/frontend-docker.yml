@@ -17,7 +17,7 @@ jobs:
           password: ${{ secrets.GITLAB_PASSWORD }}
       - uses: actions/checkout@v2
       - name: Build Docker image
-        run: docker build . --file ./frontend/Dockerfile --tag registry.gitlab.com/recepdmr/portfolio
+        run: docker build . --file ./Dockerfile --tag registry.gitlab.com/recepdmr/portfolio
       - uses: actions/checkout@v2
       - name: Push Docker image
         run: docker push  registry.gitlab.com/recepdmr/portfolio
